@@ -35,6 +35,7 @@ return array(
         'factories' => array(
             'bootstrapCss' => 'MwAdmin\View\Helper\BootstrapCssFactory',
             'bootstrapJs' => 'MwAdmin\View\Helper\BootstrapJsFactory',
+            'mwAdminBrandName' => 'MwAdmin\View\Helper\BrandNameFactory',
         ),
         'invokables' => array(
             'bootstrapForm' => 'MwAdmin\View\Helper\BootstrapForm',
