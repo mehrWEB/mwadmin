@@ -1,0 +1,11 @@
+<?php
+return array(
+    'mwadmin' => array(
+        'css' => array(
+            'use_cdn' => false
+        ),
+        'js' => array(
+            'use_cdn' => false
+        )
+    )
+);

@@ -1,0 +1,49 @@
+<?php echo $this->doctype(); ?>
+
+<html lang="de">
+<head>
+<meta charset="utf-8">
+    <?php echo $this->headTitle('ZfcAdmin - Zend Framework 2 Admin Interface')->setSeparator(' - ')->setAutoEscape(false)?>
+    <?php echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0')?>
+    
+    <?php echo $this->bootstrapCss(); ?>
+    <?php echo $this->bootstrapJs()->prependFile($this->basePath('js/jquery-2.0.3.min.js')); ?>
+  </head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="<?php echo $this->url('zfcadmin'); ?>">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <?php if($this->zfcUserIdentity()) : ?>
+                <?php echo $this->navigation('admin_navigation')
+                    ->menu()
+                    ->setUlClass('nav navbar-nav')
+                    ->setMaxDepth(0)
+                    ->setRenderInvisible(false);
+                ?>
+                <p class="navbar-text navbar-right">
+                    Welcome, <strong><?php echo $this->zfcUserDisplayName() ?></strong>
+                    &nbsp;
+                    <a class="navbar-link" href="<?php echo $this->url('zfcuser/logout'); ?>">logout</a>
+                </p>
+            <?php endif; ?>
+        </div>
+    </nav>
+    <div class="container">
+        <?php echo $this->content; ?>
+        <hr>
+        <footer>
+            <p>&copy; 2005 - 2012 by Zend Technologies Ltd. All rights reserved.</p>
+        </footer>
+    </div>
+    <?php echo $this->inlineScript() ?>
+</body>
+</html>

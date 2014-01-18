@@ -1,0 +1,17 @@
+<?php $form->prepare(); ?>
+<?php echo $this->form()->openTag($form); ?>
+    <?php foreach($form as $element) : ?>
+        <?php if($element instanceof Zend\Form\Element\Hidden) : ?>
+            <?php echo $this->formelement($element); ?>
+        <?php else :  ?>
+            <?php $errors = $this->formelementerrors($element, array('class' => 'alert alert-error')); ?>
+            <div id="form-group-<?php echo $element->getName(); ?>" class="form-group<?php echo $errors ? ' has-error' : '';?>">
+                <?php if(!$element instanceof Zend\Form\Element\Submit) : ?>
+                    <?php echo $this->formlabel($element); ?>
+                <?php endif; ?>
+                <?php echo $this->formelement($element); ?>
+                <?php echo $errors; ?>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+<?php echo $this->form()->closeTag($form); ?>
