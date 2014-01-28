@@ -39,12 +39,15 @@ return array(
         ),
         'invokables' => array(
             'bootstrapForm' => 'MwAdmin\View\Helper\BootstrapForm',
+            'dataTable' => 'MwAdmin\View\Helper\DataTable',
+            'valueFormat' => 'MwAdmin\View\Helper\DataTable\ValueFormatter',
         )
     ),
     'view_manager' => array(
         'template_map' => array(
             'layout/admin' => __DIR__ . '/../view/layout/bootstrap.phtml',
             'form/bootstrap' => __DIR__ . '/../view/form/bootstrap.phtml',
+            'mwadmin/datatable' => __DIR__ . '/../view/mw-admin/datatable.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view'
