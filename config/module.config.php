@@ -1,5 +1,5 @@
 <?php
-$version = '3.0.3';
+$version = '3.1.0';
 $settings = array(
     'css' => array(
         // for offline-usage: disable cdn and use local path instead
@@ -31,6 +31,16 @@ $settings = array(
 
 return array(
     'mwadmin' => $settings,
+    'translator' => array(
+        'locale' => 'de_DE',
+        'translation_file_patterns' => array(
+            array(
+                'type' => 'phparray',
+                'base_dir' => __DIR__ . '/../language',
+                'pattern' => '%s.php'
+            )
+        )
+    ),
     'view_helpers' => array(
         'factories' => array(
             'bootstrapCss' => 'MwAdmin\View\Helper\BootstrapCssFactory',

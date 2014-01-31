@@ -32,9 +32,10 @@
                     ->setRenderInvisible(false);
                 ?>
                 <p class="navbar-text navbar-right">
-                    Welcome, <strong><?php echo $this->zfcUserDisplayName() ?></strong>
-                    &nbsp;
-                    <a class="navbar-link" href="<?php echo $this->url('zfcuser/logout'); ?>">logout</a>
+                    <?php echo sprintf($this->translate('menu.welcome'), $this->zfcUserDisplayName()) ?></strong>
+                    <a class="navbar-link" href="<?php echo $this->url('zfcuser/logout'); ?>">
+                        <?php echo $this->translate('menu.logout'); ?>
+                    </a>
                 </p>
             <?php endif; ?>
         </div>
@@ -43,7 +44,7 @@
         <?php echo $this->content; ?>
         <hr>
         <footer>
-            <p>&copy; 2005 - 2012 by Zend Technologies Ltd. All rights reserved.</p>
+            <p>&copy; <?php echo date('Y'); ?> mehrWEB - Agentur für Neue Medien.</p>
         </footer>
     </div>
     <?php echo $this->inlineScript() ?>
