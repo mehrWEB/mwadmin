@@ -75,6 +75,7 @@ return array(
             'layout/admin' => __DIR__ . '/../view/layout/bootstrap.phtml',
             'form/bootstrap' => __DIR__ . '/../view/form/bootstrap.phtml',
             'mwadmin/datatable' => __DIR__ . '/../view/mw-admin/datatable.phtml',
+            'mwadmin/pagination' => __DIR__ . '/../view/mw-admin/paginator.phtml',
         ),
         'template_path_stack' => array(
             __DIR__ . '/../view'

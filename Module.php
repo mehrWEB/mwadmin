@@ -3,8 +3,11 @@ namespace MwAdmin;
 
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\ModuleManager\Feature\BootstrapListenerInterface;
+use Zend\EventManager\EventInterface;
+use Zend\View\Helper\PaginationControl;
 
-class Module implements ConfigProviderInterface, AutoloaderProviderInterface
+class Module implements ConfigProviderInterface, AutoloaderProviderInterface, BootstrapListenerInterface
 {
 
     /**
@@ -31,5 +34,15 @@ class Module implements ConfigProviderInterface, AutoloaderProviderInterface
                 )
             )
         );
+    }
+
+    /**
+     * (non-PHPdoc)
+     * 
+     * @see \Zend\ModuleManager\Feature\BootstrapListenerInterface::onBootstrap()
+     */
+    public function onBootstrap(EventInterface $e)
+    {
+        PaginationControl::setDefaultViewPartial('mwadmin/pagination');
     }
 }
