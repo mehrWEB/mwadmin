@@ -70,6 +70,15 @@ abstract class DataTable extends AbstractHelper implements DataTableInterface
     {
         return $this->getView()->url($action->getRoute(), $action->getRouteParams($row));
     }
+    
+    /**
+     * (non-PHPdoc)
+     * @see \MwAdmin\View\Helper\DataTableInterface::getCustomActions()
+     */
+    public function getCustomActions()
+    {
+        return array();
+    }
 
     /**
      * (non-PHPdoc)
