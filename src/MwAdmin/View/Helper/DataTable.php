@@ -40,6 +40,7 @@ abstract class DataTable extends AbstractHelper implements DataTableInterface
 
     /**
      * (non-PHPdoc)
+     * 
      * @see \MwAdmin\View\Helper\DataTableInterface::getColumns()
      */
     public function getColumns()
@@ -61,7 +62,7 @@ abstract class DataTable extends AbstractHelper implements DataTableInterface
 
     /**
      * (non-PHPdoc)
-     * 
+     *
      * @see \MwAdmin\View\Helper\DataTableInterface::hasDeleteLink()
      */
     public function hasDeleteLink()
@@ -84,7 +85,7 @@ abstract class DataTable extends AbstractHelper implements DataTableInterface
 
     /**
      * (non-PHPdoc)
-     * 
+     *
      * @see \MwAdmin\View\Helper\DataTableInterface::hasEditLink()
      */
     public function hasEditLink()
@@ -105,9 +106,9 @@ abstract class DataTable extends AbstractHelper implements DataTableInterface
         ));
     }
 
-    
     /**
      * (non-PHPdoc)
+     * 
      * @see \MwAdmin\View\Helper\DataTableInterface::hasReadLink()
      */
     public function hasReadLink()

@@ -15,6 +15,11 @@ interface DataTableInterface
      * @return boolean
      */
     public function hasActionColumn();
+    
+    /**
+     * @return array
+     */
+    public function getCustomActions();
 
     /**
      *

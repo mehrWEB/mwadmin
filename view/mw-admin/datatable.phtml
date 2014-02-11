@@ -21,6 +21,12 @@
                 <?php if($dataHelper->hasActionColumn()) : ?>
                     <td>
                         <div class="btn-group">
+                            <?php foreach($dataHelper->getCustomActions() as $action) : ?>
+                                <?php /* @var $action \MwAdmin\View\Helper\DataTable\ActionInterface */?>
+                                <a target="<?php echo $action->getTarget(); ?>" class="btn btn-default" href="<?php echo $dataHelper->getCustomLink($action, $row); ?>">
+                                    <?php echo $this->translate($action->getLabel()); ?>
+                                </a>
+                            <?php endforeach; ?>
                             <?php if($dataHelper->hasReadLink()) : ?>
                                 <a target="<?php echo $dataHelper->getReadTarget(); ?>" class="btn btn-default" href="<?php echo $dataHelper->getReadLink($row); ?>">
                                     <?php echo $this->translate('datatable.view'); ?>
