@@ -4,6 +4,7 @@ namespace MwAdmin\View\Helper;
 use Zend\View\Helper\AbstractHelper;
 use Zend\Db\ResultSet\ResultSetInterface;
 use Zend\View\Model\ViewModel;
+use MwAdmin\View\Helper\DataTable\ActionInterface;
 
 abstract class DataTable extends AbstractHelper implements DataTableInterface
 {
@@ -58,6 +59,16 @@ abstract class DataTable extends AbstractHelper implements DataTableInterface
     public function hasActionColumn()
     {
         return true;
+    }
+    
+    /**
+     *
+     * @param ActionInterface $action
+     * @param mixed $row
+     */
+    public function getCustomLink(ActionInterface $action, $row)
+    {
+        return $this->getView()->url($action->getRoute(), $action->getRouteParams($row));
     }
 
     /**
