@@ -1,8 +1,8 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <?php foreach($dataHelper->getColumns() as $col => $label) : ?>
-                <th><?php echo $label; ?></th>
+            <?php foreach($dataHelper->getColumns() as $column) : ?>
+                <th><?php echo $column->getLabel(); ?></th>
             <?php endforeach; ?>
             <?php if($dataHelper->hasActionColumn()) : ?>
                 <th><?php echo $this->translate('datatable.actions'); ?></th>
@@ -12,10 +12,10 @@
     <tbody>
         <?php foreach($rows as $row) : ?>
             <tr>
-                <?php foreach($dataHelper->getColumns() as $col => $label) : ?>
-                    <?php $method = 'get' . ucfirst($col); ?>
+                <?php foreach($dataHelper->getColumns() as $column) : ?>
+                    <?php $method = 'get' . ucfirst($column->getIndex()); ?>
                     <td>
-                        <?php echo $this->valueFormat($row->$method()); ?>
+                        <?php echo $this->translate($column($row->$method())); ?>
                     </td>
                 <?php endforeach; ?>
                 <?php if($dataHelper->hasActionColumn()) : ?>

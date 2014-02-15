@@ -10,5 +10,7 @@ return array(
     'Email' => 'E-Mail Adresse',
     'Password' => 'Passwort',
     'Hidden' => 'Versteckt',
-    'Choose ...' => 'Bitte wählen ...'
+    'Choose ...' => 'Bitte wählen ...',
+    'boolean.true' => 'Ja',
+    'boolean.false' => 'Nein'
 );

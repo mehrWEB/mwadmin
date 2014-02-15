@@ -1,9 +1,7 @@
 <?php
-namespace MwAdmin\View\Helper\DataTable;
+namespace MwAdmin\View\Helper\DataTable\Column;
 
-use Zend\View\Helper\AbstractHelper;
-
-class ValueFormatter extends AbstractHelper
+class DateColumn extends String
 {
 
     /**
@@ -16,6 +14,6 @@ class ValueFormatter extends AbstractHelper
         if ($value instanceof \DateTime) {
             return $value->format('d.m.Y H:i');
         }
-        return $value;
+        return parent::__invoke($value);
     }
 }

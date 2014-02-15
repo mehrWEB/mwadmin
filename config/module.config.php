@@ -66,8 +66,7 @@ return array(
         ),
         'invokables' => array(
             'bootstrapForm' => 'MwAdmin\View\Helper\BootstrapForm',
-            'dataTable' => 'MwAdmin\View\Helper\DataTable',
-            'valueFormat' => 'MwAdmin\View\Helper\DataTable\ValueFormatter',
+            'dataTable' => 'MwAdmin\View\Helper\DataTable'
         )
     ),
     'view_manager' => array(
