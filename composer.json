@@ -1,12 +1,18 @@
 {
-	"name" : "mehrweb/mwadmin",
-	"description" : "ZF2 module for an admin interface. Based on ZfcAdmin",
-	"authors" : [{
-			"name" : "Timo Ziemann",
-			"email" : "info@mehrweb.de",
-			"homepage" : "http://www.mehrweb.de"
-		}
-	],
-	"keywords" : [
-	]
+    "name" : "mehrweb/mwadmin",
+    "description" : "ZF2 module for an admin interface. Based on ZfcAdmin",
+    "authors" : [{
+        "name" : "Timo Ziemann",
+        "email" : "info@mehrweb.de",
+        "homepage" : "http://www.mehrweb.de"
+    }],
+    "keywords" : [ ],
+    "autoload": {
+        "psr-0": {
+            "MwAdmin": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
 }
