@@ -13,6 +13,9 @@ $settings = array(
         
         // will be passed to basePath()
         'local_url' => 'css/bootstrap.min.css',
+        
+        // add custom css
+        'custom_theme' => 'css/mwadmin.css'
     ),
     'js' => array(
         // for offline-usage: disable cdn and use local path instead

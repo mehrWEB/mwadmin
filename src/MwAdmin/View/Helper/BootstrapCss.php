@@ -52,14 +52,19 @@ class BootstrapCss extends AbstractHelper
      */
     public function __invoke()
     {
-        if ($this->getConfig('use_cdn')) {
-            $cdnUrl = $this->getConfig('cdn_url');
-            return $this->getView()
-                ->headLink()
-                ->prependStylesheet($cdnUrl);
-        }
-        $localUrl = $this->getConfig('local_url');
         $view = $this->getView();
-        return $view->headLink()->prependStylesheet($view->basepath($localUrl));
+        
+        if ($this->getConfig('use_cdn')) {
+            $bootstrapUrl = $this->getConfig('cdn_url');
+        } else {
+            $bootstrapUrl = $view->basepath($this->getConfig('local_url'));
+        }
+        
+        if($this->getConfig('custom_theme')) {
+            $themeUrl = $view->basepath($this->getConfig('custom_theme'));
+            $view->headLink()->prependStylesheet($themeUrl);
+        }
+        
+        return $view->headLink()->prependStylesheet($bootstrapUrl);
     }
 }
