@@ -15,7 +15,8 @@
                 <?php foreach($dataHelper->getColumns() as $column) : ?>
                     <?php $method = 'get' . ucfirst($column->getIndex()); ?>
                     <td>
-                        <?php echo $this->translate($column($row->$method())); ?>
+                        <?php $val = $column($row->$method()); ?>
+                        <?php echo $val ? $this->translate($val)  : ''; ?>
                     </td>
                 <?php endforeach; ?>
                 <?php if($dataHelper->hasActionColumn()) : ?>
