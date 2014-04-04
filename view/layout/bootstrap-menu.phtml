@@ -1,0 +1,33 @@
+<?php foreach($this->container as $page) : ?>
+    <?php if(!$this->navigation()->accept($page)) : ?>
+        <?php continue; ?>
+    <?php endif; ?>
+    
+    <?php $classes = array($page->getClass()); ?>
+    <?php
+    if($page->isActive(true)) {
+        $classes[] = 'active'; 
+    }
+    $hasChildren = $page->hasPages() && trim($this->navigation()->menu($page));
+    if($hasChildren) {
+        $classes[] = 'dropdown'; 
+    } ?>
+    <li class="<?php echo implode(' ', $classes); ?>" <?php echo $page->getId() !== null ? 'id="' . $page->getId() . '"' : ''; ?>>
+        <?php if($hasChildren) : ?>
+            <a class="dropdown-toggle" data-toggle="dropdown" href="<?php echo $page->getHref() ?>">
+                <?php echo $this->translate($page->getLabel()); ?>
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+                <?php echo $this->navigation()->menu($page)->setPartial('layout/bootstrap-menu.phtml'); ?>
+            </ul>
+        <?php else : ?>
+            <a href="<?php echo $page->getHref(); ?>">
+                <?php if($page->icon !== null) : ?>
+                    <i class="<?php echo $page->icon; ?>"></i>
+                <?php endif; ?>
+                <?php echo $this->translate($page->getLabel()); ?>
+            </a>
+        <?php endif; ?>
+    </li>
+<?php endforeach; ?>

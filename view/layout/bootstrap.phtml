@@ -25,12 +25,12 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <?php if($this->zfcUserIdentity()) : ?>
+                <ul class="nav navbar-nav">
                 <?php echo $this->navigation('admin_navigation')
                     ->menu()
-                    ->setUlClass('nav navbar-nav')
-                    ->setMaxDepth(0)
-                    ->setRenderInvisible(false);
+                    ->setPartial('layout/bootstrap-menu.phtml')
                 ?>
+                </ul>
                 <p class="navbar-text navbar-right">
                     <?php echo sprintf($this->translate('menu.welcome'), $this->zfcUserDisplayName()) ?></strong>
                     <a class="navbar-link" href="<?php echo $this->url('zfcuser/logout'); ?>">
