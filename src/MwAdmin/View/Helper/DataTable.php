@@ -101,6 +101,10 @@ abstract class DataTable extends AbstractHelper implements DataTableInterface
         return $this->getView()->url($this->getRoute(), array(
             'action' => 'delete',
             $idParam => $row->getId()
+        ), array(
+            'query' => array(
+                'page' => isset($_GET['page']) ? (int) $_GET['page'] : null
+            )
         ));
     }
 
@@ -124,6 +128,10 @@ abstract class DataTable extends AbstractHelper implements DataTableInterface
         return $this->getView()->url($this->getRoute(), array(
             'action' => 'edit',
             $idParam => $row->getId()
+        ), array(
+            'query' => array(
+                'page' => isset($_GET['page']) ? (int) $_GET['page'] : null
+            )
         ));
     }
 
