@@ -7,6 +7,12 @@
         "homepage" : "http://www.mehrweb.de"
     }],
     "keywords" : [ ],
+    "require": {
+        "zf-commons/zfc-admin": ">=0.2.1"
+    },
+    "suggest": {
+        "bjyoungblood/bjy-authorize": "Access control to protect ZfcAdmin against unauthorized users"
+    },
     "autoload": {
         "psr-0": {
             "MwAdmin": "src/"
