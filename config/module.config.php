@@ -1,5 +1,5 @@
 <?php
-$version = '3.1.0';
+$version = '3.3.5';
 $settings = array(
     'css' => array(
         // for offline-usage: disable cdn and use local path instead
@@ -34,23 +34,6 @@ $settings = array(
 
 return array(
     'mwadmin' => $settings,
-    'bjyauthorize' => array(
-        'role_providers' => array(
-            // this will load roles from the user_role table in a database
-            // format: user_role(role_id(varchar), parent(varchar))
-            'BjyAuthorize\Provider\Role\ZendDb' => array(
-                'table'                 => 'user_role',
-                'identifier_field_name' => 'id',
-                'role_id_field'         => 'role_id',
-                'parent_role_field'     => 'parent_id',
-            ),
-        ),
-        'guards' => array(
-            'BjyAuthorize\Guard\Route' => array(
-                array('route' => 'zfcadmin', 'roles' => array('guest')),
-            )
-        )
-    ),
     'translator' => array(
         'locale' => 'de_DE',
         'translation_file_patterns' => array(
