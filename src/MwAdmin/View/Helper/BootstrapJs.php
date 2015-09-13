@@ -56,7 +56,8 @@ class BootstrapJs extends AbstractHelper
             $cdnUrl = $this->getConfig('cdn_url');
             return $this->getView()
                 ->headScript()
-                ->prependFile($cdnUrl);
+                ->prependFile($cdnUrl)
+                ->prependFile('https://code.jquery.com/jquery-2.1.4.min.js');
         }
         $localUrl = $this->getConfig('local_url');
         $view = $this->getView();
