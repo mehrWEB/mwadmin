@@ -1,7 +1,7 @@
 <?php
 namespace MwAdmin\View\Helper\DataTable\Column;
 
-class Boolean extends String
+class Boolean extends StringCol
 {
 
     /**
