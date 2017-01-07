@@ -5,7 +5,7 @@ use Zend\View\Helper\AbstractHelper;
 use Zend\Db\ResultSet\ResultSetInterface;
 use Zend\View\Model\ViewModel;
 use MwAdmin\View\Helper\DataTable\ActionInterface;
-use MwAdmin\View\Helper\DataTable\Column\String;
+use MwAdmin\View\Helper\DataTable\Column\String as StringCol;
 
 abstract class DataTable extends AbstractHelper implements DataTableInterface
 {
@@ -48,7 +48,7 @@ abstract class DataTable extends AbstractHelper implements DataTableInterface
     public function getColumns()
     {
         return array(
-            new String('id', 'ID')
+            new StringCol('id', 'ID')
         );
     }
 
