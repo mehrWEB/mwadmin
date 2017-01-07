@@ -3,7 +3,7 @@ namespace MwAdmin\View\Helper\DataTable\Column;
 
 use Zend\View\Helper\EscapeHtml;
 
-class String implements ColumnInterface
+class StringCol implements ColumnInterface
 {
 
     /**
