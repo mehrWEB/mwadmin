@@ -1,7 +1,7 @@
 <?php
 namespace MwAdmin\View\Helper\DataTable\Column;
 
-class Url extends String
+class Url extends StringCol
 {
 
     /**
