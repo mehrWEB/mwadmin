@@ -1,7 +1,7 @@
 <?php
 namespace MwAdmin\View\Helper\DataTable\Column;
 
-class DateColumn extends String
+class DateColumn extends StringCol
 {
 
     /**
