@@ -3,7 +3,7 @@ namespace MwAdmin\View\Helper\DataTable\Column;
 
 use Zend\I18n\View\Helper\CurrencyFormat;
 
-class Currency extends String
+class Currency extends StringCol
 {
 
     /**
