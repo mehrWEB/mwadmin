@@ -69,7 +69,20 @@ abstract class DataTable extends AbstractHelper implements DataTableInterface
      */
     public function getCustomLink(ActionInterface $action, $row)
     {
-        return $this->getView()->url($action->getRoute(), $action->getRouteParams($row));
+        if($this->hasCustomLink($action, $row)) {
+            return $this->getView()->url($action->getRoute(), $action->getRouteParams($row));
+        }
+        return false;
+    }
+    
+    /**
+     *
+     * @param ActionInterface $action
+     * @param mixed $row
+     */
+    public function hasCustomLink(ActionInterface $action, $row)
+    {
+        return true;
     }
     
     /**
